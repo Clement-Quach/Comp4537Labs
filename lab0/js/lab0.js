@@ -16,7 +16,7 @@ class box {
 }
 let score = [0];
 
-function gaming(){
+export function gaming(){
   const displayDiv = document.getElementById('display');
   const numBoxes = document.getElementById('input').value;
   showStart(displayDiv, numBoxes);
