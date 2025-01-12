@@ -1,7 +1,7 @@
 //todo: get the css of the section to work. get the memory game to work. host
 
-
-const wmsg = winmsg;
+import{ msg } from "../lang/msg/en/user.js";
+const wmsg = msg["win"];
 class box {
   constructor(num, col){
     this.btn = document.createElement("button");
@@ -90,7 +90,7 @@ setTimeout(() => {
 
 function win(){
   showPopup();
-  console.log(winmsg);
+  console.log(wmsg);
 
 }
 
