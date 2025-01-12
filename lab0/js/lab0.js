@@ -23,6 +23,14 @@ export function gaming(){
 
 }
 
+function setContent(){
+  const input = document.getElementById('input');
+  input.placeholder = msg["prompt"];
+  const btn = document.getElementById('btn');
+  btn.innerHTML = msg["go"];
+  btn.onclick = gaming;
+}
+
 function display(displayDiv, sections){
   //helper functions
 function btnC(inp){
@@ -125,3 +133,5 @@ function showPopup() {
   // Append the popup to the body
   document.body.appendChild(popup);
 }
+
+setContent();
