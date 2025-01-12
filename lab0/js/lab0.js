@@ -11,6 +11,7 @@ class box {
     this.btn.className = "section";
     this.btn.onclick = () => {};
     this.btn.style.marginLeft = 0;
+    
     this.btn.style.marginTop = 0;
   }
 }
@@ -32,21 +33,6 @@ function setContent(){
 }
 
 function display(displayDiv, sections){
-  //helper functions
-function btnC(inp){
-  const num = inp.btn.id;
-  if (num === ""+ score[0]){
-    score.shift();
-    inp.btn.innerHTML = num;
-    if (score.length === 0){
-      win(displayDiv);
-    }
-  } else {
-    lose(displayDiv,sections);
-  }
-}
-
-
 
 //copilot chose the colours
 
@@ -65,6 +51,24 @@ sections.forEach(box => {
 box.btn.onclick = () => { btnC(box) };
     displayDiv.appendChild(box.btn);
 });
+
+
+  //helper functions
+  function btnC(inp){
+    const num = inp.btn.id;
+
+    if (num === ""+ score[0]){
+      score.shift();
+      inp.btn.disabled = true;
+      inp.btn.innerHTML = num;
+      if (score.length === 0){
+        win(displayDiv);
+      }
+    } else {
+      lose(sections);
+    }
+  }
+  
 }
 
 function showStart(displayDiv, numBoxes){
