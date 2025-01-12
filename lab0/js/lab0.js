@@ -1,4 +1,4 @@
-//todo: get the css of the section to work. get the memory game to work. host
+//todo: check over project and hand in
 
 import{ msg } from "../lang/msg/en/user.js";
 const wmsg = msg["win"];
@@ -34,7 +34,6 @@ function setContent(){
 
 function display(displayDiv, sections){
 
-//copilot chose the colours
 
 displayDiv.innerHTML = '';
 ;
@@ -44,7 +43,6 @@ for (let i = sections.length- 1; i > 0; i--) {
 }
 
 sections.forEach(box => {
-   // section.textContent = ` ${number}`;
  box.btn.style.marginLeft = Math.floor(Math.random() * 80) + "%";
   box.btn.style.marginTop = Math.floor(Math.random() * 20) + "px";
  box.btn.innerHTML = "";
@@ -87,8 +85,6 @@ const boxes = []
 sections.forEach(number => {
   const section = new box(number, colours[number]);
   boxes.push(section);
-  // section.className = 'section';
-  // section.textContent = ` ${number}`;
   displayDiv.appendChild(section.btn);
 });
 
@@ -101,40 +97,30 @@ setTimeout(() => {
 
 
 function win(){
-  showPopup();
-  console.log(wmsg);
+  showPopup(wmsg);
+
 
 }
 
 function lose(bxs){
   bxs.forEach(box => {
     box.btn.innerHTML = box.btn.id;
+    btn.disabled = true;
   });
-  console.log("lose");
+  showPopup(msg["lose"]);
 }
 
-function showPopup() {
-  // Create the popup element
-  const popup = document.createElement('div');
-  popup.textContent = 'You win!';
-  popup.style.position = 'fixed';
-  popup.style.top = '50%';
-  popup.style.left = '50%';
-  popup.style.transform = 'translate(-50%, -50%)';
-  popup.style.padding = '20px';
-  popup.style.backgroundColor = '#ffffff';
-  popup.style.border = '2px solid #000';
-  popup.style.textAlign = 'center';
-  popup.style.cursor = 'pointer';
-  popup.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-  popup.style.fontSize = '20px';
+//assosted by chatgpt
+function showPopup(msg) {
 
-  // Add a click event listener to reset the page
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.innerHTML = msg;
+
   popup.addEventListener('click', () => {
-      location.reload(); // Reload the page
+      location.reload(); 
   });
 
-  // Append the popup to the body
   document.body.appendChild(popup);
 }
 
