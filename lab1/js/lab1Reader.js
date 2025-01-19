@@ -30,8 +30,10 @@ function loadNotes() {
 }
 
 function start(){
-  document.getElementById('wHead').textContent = msg.rHead
-  document.getElementById('back').textContent = msg.back;
+  document.getElementById('wHead').innerHTML = msg.rHead
+  document.getElementById('back').innerHTML = msg.back;
 }
+
+start();
 
 setInterval(loadNotes, 2000);

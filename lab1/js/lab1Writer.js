@@ -55,10 +55,10 @@ function saveNotes() {
 }
 
 function start(){
-    document.getElementById('wHead').textContent = msg.wHead;   
-    document.getElementById('wAddNote').textContent = msg.wAddNote;
-    document.getElementById('back').textContent = msg.back;
-    document.getElementById('wLastSaved').textContent = msg.wLastSavedNotYet;
+    document.getElementById('wHead').innerHTML = msg.wHead;   
+    document.getElementById('wAddNote').innerHTML = msg.wAddNote;
+    document.getElementById('back').innerHTML = msg.back;
+    document.getElementById('wLastSaved').innerHTML = msg.wLastSavedNotYet;
 }
 
 start()
