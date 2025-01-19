@@ -6,6 +6,7 @@ export const msg = {
   wLastSaved: "Last saved: ",
   wLastSavedNotYet: "Last saved: Not yet",
   wDel: "Delete",
-  rHead: "Note reader"
-  
+  rHead: "Note reader",
+  mHead: "Lab 1: JSON, Object Constructor, localStorage Clement Quach"
+
 }

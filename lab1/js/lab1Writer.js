@@ -22,7 +22,6 @@ function loadNotes() {
     notesContainer.innerHTML = '';
     notes.forEach((note, index) => {
         const n = new nte(note.text, index);
-        n.h.innerHTML.onchange = modifyNote;
         notesContainer.appendChild(n.h);
     });
 }
@@ -58,7 +57,7 @@ function start(){
     document.getElementById('wHead').innerHTML = msg.wHead;   
     document.getElementById('addNote').innerHTML = msg.wAddNote;
     document.getElementById('back').innerHTML = msg.back;
-    document.getElementById('wLastSaved').innerHTML = msg.wLastSavedNotYet;
+    document.getElementById('lastSaved').innerHTML = msg.wLastSavedNotYet;
 }
 
 start()
