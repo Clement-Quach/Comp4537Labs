@@ -1,2 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+#notes {
+  margin-top: 20px;
+}
+.note {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.note button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.note button:hover {
+  background: #e60000;
+}
 
-
+.noteDisplay{
+  background-color: rgb(143, 143, 248);
+  border: 2px solid black;
+  width: 50%;
+  height: 15em;
+}
