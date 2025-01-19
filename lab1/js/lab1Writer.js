@@ -56,7 +56,7 @@ function saveNotes() {
 
 function start(){
     document.getElementById('wHead').innerHTML = msg.wHead;   
-    document.getElementById('wAddNote').innerHTML = msg.wAddNote;
+    document.getElementById('addNote').innerHTML = msg.wAddNote;
     document.getElementById('back').innerHTML = msg.back;
     document.getElementById('wLastSaved').innerHTML = msg.wLastSavedNotYet;
 }
