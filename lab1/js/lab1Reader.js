@@ -21,7 +21,7 @@ class nte {
 
 function loadNotes() {
   const now = new Date();
-  lastSaved.textContent = `Last saved: ${now.toLocaleString()}`;
+  lastSaved.textContent = `${msg.wLastSavedNotYet} ${now.toLocaleString()}`;
   notesContainer.innerHTML = '';
   notes.forEach((note) => {
       const noteDiv = new nte(note.text);
