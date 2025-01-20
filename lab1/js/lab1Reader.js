@@ -30,7 +30,7 @@ function loadNotes() {
 }
 
 function start(){
-  document.getElementById('wHead').innerHTML = msg.rHead
+  document.getElementById('head').innerHTML = msg.rHead
   document.getElementById('back').innerHTML = msg.back;
 }
 

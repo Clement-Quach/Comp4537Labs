@@ -9,11 +9,18 @@ class nte {
     constructor(text, index) {
       this.text = text;
       this.h = document.createElement('div');
+      const tarea = document.createElement('textarea');
+      tarea.value = text;
+      tarea.onchange = () => modifyNote(index, tarea.value);
+      tarea.placeholder = msg.wPlacehold;
+      tarea.rows = 2;
+    const delButton = document.createElement('button');
+    delButton.textContent = msg.wDel;
+    delButton.onclick = () => deleteNote(index);
+    this.h.appendChild(tarea);
+    this.h.appendChild(delButton);
       this.h.className = 'note';
-      this.h.innerHTML = `
-            <textarea onchange="modifyNote(${index}, this.value)" placeholder="${msg.wPlacehold}" rows="2">${text}</textarea>
-            <button onclick="deleteNote(${index})">${ msg.wDel}</button>
-        `;;
+  
    
     }
   }
@@ -36,12 +43,12 @@ addNoteButton.addEventListener('click', () => {
     loadNotes();
 });
 
-export function modifyNote(index, newText) {
+ function modifyNote(index, newText) {
     notes[index].text = newText;
     saveNotes();
 }
 
-export function deleteNote(index) {
+ function deleteNote(index) {
     notes.splice(index, 1);
     saveNotes();
     loadNotes();
