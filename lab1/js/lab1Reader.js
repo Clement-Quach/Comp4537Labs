@@ -3,7 +3,7 @@ import {msg} from '../lang/msg/en/user.js';
 const notesContainer = document.getElementById('notes');
 const lastSaved = document.getElementById('lastUpdated');
 
-let notes = JSON.parse(localStorage.getItem('notes')) || [];
+
 
 
 
@@ -20,6 +20,7 @@ class nte {
 }
 
 function loadNotes() {
+  let notes = JSON.parse(localStorage.getItem('notes')) || [];
   const now = new Date();
   lastSaved.textContent = `${msg.wLastSavedNotYet} ${now.toLocaleString()}`;
   notesContainer.innerHTML = '';
