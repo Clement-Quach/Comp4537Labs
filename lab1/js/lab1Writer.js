@@ -36,12 +36,12 @@ addNoteButton.addEventListener('click', () => {
     loadNotes();
 });
 
-function modifyNote(index, newText) {
+export function modifyNote(index, newText) {
     notes[index].text = newText;
     saveNotes();
 }
 
-function deleteNote(index) {
+export function deleteNote(index) {
     notes.splice(index, 1);
     saveNotes();
     loadNotes();
