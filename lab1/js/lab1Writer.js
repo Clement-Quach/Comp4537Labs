@@ -1,4 +1,5 @@
 import {msg} from '../lang/msg/en/user.js';
+//copilot helped
 const addNoteButton = document.getElementById('addNote');
 const notesContainer = document.getElementById('notes');
 const lastSaved = document.getElementById('lastSaved');
