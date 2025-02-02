@@ -26,4 +26,15 @@ class Server {
         }
     }
 
+    // Start the server
+    start(port) {
+        this.server.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+        });
+    }
 }
+
+// Start the server
+const port = process.env.PORT || 3000;
+const server = new Server();
+server.start(port);
