@@ -14,7 +14,7 @@ class Server {
         const parsedUrl = url.parse(req.url, true);
         const pathname = parsedUrl.pathname;
 
-        if (pathname === '/lab3/getDate/' && req.method === 'GET') {
+        if (pathname === '/comp4537labs-lab-3/lab3/getDate/' && req.method === 'GET') {
             const name = parsedUrl.query.name || 'Guest';
             const message = this.messageHandler.formatMessage(name);
             const styledMessage = `<p style="color: blue;">${message}</p>`;
