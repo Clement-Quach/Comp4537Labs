@@ -1,4 +1,4 @@
-const messages = require('../config/messages');
+const messages = require('./en');
 const Utils = require('./utils');
 
 class MessageHandler {
