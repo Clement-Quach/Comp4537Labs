@@ -1,11 +1,12 @@
-const https = require('https');
+const http = require('http');
 const url = require('url');
 const MessageHandler = require('./modules/msgHandle');
+const msgs = require('./modules/en');
 
 class Server {
     constructor() {
         this.messageHandler = new MessageHandler();
-        this.server = https.createServer((req, res) => this.handleRequest(req, res));
+        this.server = http.createServer((req, res) => this.handleRequest(req, res));
     }
 
     // Handle incoming requests
@@ -22,7 +23,7 @@ class Server {
             res.end(styledMessage);
         } else {
             res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('404 Not Found');
+            res.end(msgs.err);
         }
     }
 
