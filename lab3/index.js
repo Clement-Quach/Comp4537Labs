@@ -1,11 +1,11 @@
-const http = require('http');
+const https = require('https');
 const url = require('url');
 const MessageHandler = require('./modules/msgHandle');
 
 class Server {
     constructor() {
         this.messageHandler = new MessageHandler();
-        this.server = http.createServer((req, res) => this.handleRequest(req, res));
+        this.server = https.createServer((req, res) => this.handleRequest(req, res));
     }
 
     // Handle incoming requests
@@ -26,15 +26,4 @@ class Server {
         }
     }
 
-    // Start the server
-    start(port) {
-        this.server.listen(port, () => {
-            console.log(`Server is running on port ${port}`);
-        });
-    }
 }
-
-// Start the server
-const port = process.env.PORT || 3000;
-const server = new Server();
-server.start(port);
